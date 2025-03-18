@@ -4,34 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         long sum = sc.nextLong();
-        // Please write your code here.
 
         long left = 1;
-        long right = sum;
-        long result = -1;
+        long right = (long) Math.sqrt(2 * sum); // 범위를 줄여줌
+        long max = -1;
 
-        while(left<=right){
-            long mid = (right+left)/2;
+        while (left <= right) {
+            long mid = (left + right) / 2;
+            long triangularSum = (mid * (mid + 1)) / 2;
 
-            long s = 0l;
-
-            for(long i=1; i<=mid; i++){
-                s+=i;
-
-            }
-
-
-            if(s<=sum){
-                result = Math.max(result, mid);
-                left=mid+1;
-
-            }else if(s>sum){
-                right=mid-1;
+            if (triangularSum <= sum) { 
+                max = mid;  
+                left = mid + 1;  // 더 큰 mid를 탐색
+            } else {
+                right = mid - 1; 
             }
         }
-        System.out.println(result);
 
-
-
+        System.out.println(max);
     }
 }
