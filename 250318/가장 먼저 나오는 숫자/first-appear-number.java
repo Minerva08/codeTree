@@ -27,7 +27,7 @@ public class Main {
 
     public static int lowerBound(int num){
         int left = 0;
-        int right = arr.length;
+        int right = arr.length-1;
 
         while(left<right){
             int mid = (right+left)/2;
@@ -39,6 +39,7 @@ public class Main {
             }
 
         }
+        
         if(arr[left] == num){
             return left+1;
         }
