@@ -15,7 +15,7 @@ public class Main {
 
         int left = 1;
         int right = arr[n-1];
-        int result =-1;
+        int result =0;
         
         while(left<=right){
             int mid = (right+left)/2;
