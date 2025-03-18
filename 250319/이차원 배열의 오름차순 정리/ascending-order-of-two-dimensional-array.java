@@ -3,15 +3,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int k = sc.nextInt();
+        long N = sc.nextInt();
+        long k = sc.nextInt();
         sc.close();
 
-        int left = 1, right = N * N, answer = 0;
+        long left = 1, right = N * N, answer = 0;
 
         while (left <= right) {
-            int mid = left + (right - left) / 2;
-            int count = countLessThanOrEqual(mid, N);
+            long mid = left + (right - left) / 2;
+            long count = countLessThanOrEqual(mid, N);
 
             if (count >= k) {
                 answer = mid; // mid가 정답 후보
@@ -24,9 +24,9 @@ public class Main {
         System.out.println(answer);
     }
 
-    private static int countLessThanOrEqual(int x, int N) {
-        int count = 0;
-        for (int i = 1; i <= N; i++) {
+    private static long countLessThanOrEqual(long x, long N) {
+        long count = 0;
+        for (long i = 1; i <= N; i++) {
             count += Math.min(N, x / i); // i번째 행에서 x 이하의 개수
         }
         return count;
