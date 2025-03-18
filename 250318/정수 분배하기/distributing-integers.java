@@ -27,7 +27,7 @@ public class Main {
 
             if(cnt>=m){
                 // mid 증가
-                result = Math.max(result,mid);  
+                result = mid;  
                 left = mid+1;
             }else{
                 right = mid-1;
