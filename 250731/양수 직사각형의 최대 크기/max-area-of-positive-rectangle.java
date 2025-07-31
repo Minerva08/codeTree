@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Main {
-    static int max=1;
+    static int max=-1;
     static int[][] grid;
     static int m,n;
 
