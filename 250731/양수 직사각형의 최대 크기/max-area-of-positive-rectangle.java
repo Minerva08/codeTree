@@ -45,9 +45,10 @@ public class Main {
 
     public static boolean valid(int heigth, int width, int x, int y){
         if(inRange(x+heigth-1,y+width-1)){
+
             for(int i=x; i<x+heigth; i++){
                 for(int j=y; j<y+width; j++){
-                    if(grid[i][j]<0){
+                    if(grid[i][j]<=0){
                         return false;
                     }
                     
@@ -56,12 +57,13 @@ public class Main {
             
             return true;
 
-        }return false;
+        }
+        return false;
         
     }
 
     public static boolean inRange(int x, int y){
-        if(x<0 || x>=n || y<0 || y>=n){
+        if(x<0 || x>=n || y<0 || y>=m){
             return false;
         }
       return true;   
