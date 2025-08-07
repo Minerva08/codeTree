@@ -1,8 +1,9 @@
 import java.util.*;
 import java.util.Map.Entry;
 
-
 public class Main {
+
+
     static int min = Integer.MAX_VALUE;
 
     public static void main(String[] args) {
@@ -20,31 +21,27 @@ public class Main {
             arr[0] = lastAlpha;
 
 
-            Map<Character,Integer> result = new HashMap<>();
-            result.put(arr[0],1);
-
+            StringBuilder result = new StringBuilder();
+            int cnt=1;
             for(int k=1; k<arr.length; k++){
                 if(arr[k] != arr[k-1]){
-                    result.put(arr[k],1);
-                }else{
-                    result.put(arr[k],result.get(arr[k])+1);
-                }
-            }
-
-            int cnt =result.size();
-            for(Entry<Character, Integer> encodingMap :result.entrySet()){
-                if(encodingMap.getValue()>9){
-                    cnt+=2;
+                    result.append(arr[k-1]).append(cnt);
+                    cnt=1;
                 }else{
                     cnt++;
                 }
             }
 
-            min = Math.min(cnt,min);
-        
+            result.append(arr[arr.length - 1]).append(cnt);
+
+            min = Math.min(result.length(),min);
+
         }
         System.out.println(min);
 
 
     }
 }
+
+
+
