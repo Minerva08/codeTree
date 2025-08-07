@@ -27,19 +27,18 @@ public class Main {
                 if(arr[k] != arr[k-1]){
                     result.put(arr[k],1);
                 }else{
-                    int cnt = result.get(arr[k]);
-                    result.put(arr[k],cnt+1);
+                    result.put(arr[k],result.get(arr[k])+1);
                 }
             }
-            int cnt =0;
+
+            int cnt =result.size();
             for(Entry<Character, Integer> encodingMap :result.entrySet()){
-                if(encodingMap.getValue()>=10){
-                    cnt=+2;
+                if(encodingMap.getValue()>9){
+                    cnt+=2;
                 }else{
                     cnt++;
                 }
             }
-            cnt+=result.size();
 
             min = Math.min(cnt,min);
         
