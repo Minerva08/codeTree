@@ -2,21 +2,19 @@ import java.util.*;
 public class Main {
     public static class Num implements Comparable<Num>{
         String num;
-        int fistNum;
-
+    
         public Num(int num){
             this.num = String.valueOf(num);
-            this.fistNum = (int)(num/Math.pow(this.num.length(),10));
         }
 
         @Override
         public int compareTo(Num n){
-            if(n.fistNum==this.fistNum){
-                // 오름차순
-                return Integer.compare(this.num.length(),n.num.length());
-            }
+
+            String s1 = n.num + this.num;
+                String s2 = this.num + n.num;
+                return s1.compareTo(s2);
             // 내림차순
-            return Integer.compare(n.fistNum,this.fistNum);
+            
 
         }
 
@@ -32,8 +30,9 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         Arrays.sort(arr);
+
         for(int i=0; i<n; i++){
-            sb.append(String.valueOf(arr[i].num));
+            sb.append(arr[i].num);
         }
         System.out.println(sb);
     }
