@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -7,24 +8,15 @@ public class Main {
         for (int i = 0; i < N; i++) {
             a[i] = sc.nextInt();
         }
-        // Please write your code here.
 
-        int maxV = Integer.MIN_VALUE;
-        int sum=0;
+        int maxV = a[0];
+        int sum = a[0];
 
-        for(int i=0; i<N; i++){
-            if((sum+a[i])<=0){
-                sum=a[i];
-          
-            }else{
-                sum+=a[i];              
-            }
-            maxV = Math.max(maxV,sum);
-
-            
+        for (int i = 1; i < N; i++) {
+            sum = Math.max(a[i], sum + a[i]); // 핵심
+            maxV = Math.max(maxV, sum);
         }
 
         System.out.println(maxV);
-
     }
 }
