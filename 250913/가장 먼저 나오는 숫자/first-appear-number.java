@@ -21,7 +21,7 @@ public class Main {
 
             int left=0;
             int right = n-1;
-            int minIdx=n-1;
+            int minIdx=n;
 
             while(left<=right){
                 int mid = (left+right)/2;
@@ -39,7 +39,7 @@ public class Main {
 
             }
 
-            if(minIdx==(n-1)){
+            if(minIdx==n){
                 result[i]=-1;
             }else{
                 result[i] = minIdx+1;
