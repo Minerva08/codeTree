@@ -1,5 +1,9 @@
-import java.util.*;
+import java.util.Scanner;
 public class Main {
+
+    // 하한값 찾기
+    // lowerBound
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -14,45 +18,30 @@ public class Main {
         }
         // Please write your code here.
 
-        int[] result = new int[m];
-
         for(int i=0; i<m; i++){
+
+            // 이진 탐색
             int target = queries[i];
-
-            int left=0;
-            int right = n-1;
-            int minIdx=n;
-
-            while(left<=right){
+            // 하한값/상한값은 범위이므로 일치하지 않아도됨
+            //left<right
+            int left = 0;
+            int right = n;
+            int minIdx= -1;
+            while(left<right){
                 int mid = (left+right)/2;
 
                 if(target<=arr[mid]){
+                    //정확히 일치하는 값의 위치 중 최소를 찾아야 하므로
                     if(target==arr[mid]){
-                       minIdx = Math.min(minIdx,mid);
-                    }  
-                    right = mid-1;
-
+                        minIdx=mid;
+                    }
+                    right = mid;
                 }else{
-                    // target>mid
-                    left= mid+1;
+                    left = mid+1;
                 }
-
+                
             }
-
-            if(minIdx==n){
-                result[i]=-1;
-            }else{
-                result[i] = minIdx+1;
-
-            }
-
-
+            System.out.println(minIdx==-1? -1: (minIdx+1));
         }
-
-
-        for(int i=0; i<m; i++){
-            System.out.println(result[i]);
-        }
-        
     }
 }
