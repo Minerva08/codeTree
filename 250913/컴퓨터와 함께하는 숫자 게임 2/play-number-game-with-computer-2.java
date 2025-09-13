@@ -6,12 +6,7 @@ public class Main {
         long m = sc.nextLong();
         long a = sc.nextLong();
         long b = sc.nextLong();
-        // Please write your code here.
-        long[] nums = new long[(int)m];
-
-        for(int i=1; i<m; i++){
-            nums[i] = i;
-        }
+       
         long minTurn = m;
         long maxTurn = 0;
         
@@ -20,15 +15,15 @@ public class Main {
 
             //이진탐색
             long target = j;
-            long left=0;
-            long right=m+1;
+            long left=1;
+            long right=m;
             while(left<=right){
                 long mid = (left+right)/2;
 
-                if(nums[(int)mid]==target){
+                if(mid==target){
                     cnt++;
                     break;
-                }else if(nums[(int)mid]>target){
+                }else if(mid>target){
                     right=mid-1;
                 }else{
                     left = mid+1;
