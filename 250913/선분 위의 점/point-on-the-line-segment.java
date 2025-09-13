@@ -13,10 +13,12 @@ public class Main {
         int m = sc.nextInt();
         
         points = new int[n];
-        Arrays.sort(points);
+        
         for (int i = 0; i < n; i++) {
             points[i] = sc.nextInt();
         }
+                Arrays.sort(points);
+
         int a, b;
         for (int i = 0; i < m; i++) {
             a = sc.nextInt();
