@@ -12,7 +12,7 @@ public class Main {
         // Please write your code here.
 
         long left = 1;
-        long right = maxHour*(long)m;
+        long right = maxHour*n;
 
         while(left<right){
             long mid = (left+right)/2;
