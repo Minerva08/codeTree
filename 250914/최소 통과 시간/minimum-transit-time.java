@@ -5,7 +5,7 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
         int[] arr = new int[m];
-        int maxHour = 0;
+        long maxHour = 0;
         for (int i = 0; i < m; i++){
             arr[i] = sc.nextInt();
             maxHour = Math.max(arr[i],maxHour);}
