@@ -11,12 +11,12 @@ public class Main {
             maxHour = Math.max(arr[i],maxHour);}
         // Please write your code here.
 
-        int left = 0;
+        int left = 1;
         int right = maxHour*m;
 
         while(left<right){
             int mid = (left+right)/2;
-            int pCnt = 0;
+            long pCnt = 0;
             for(int i=0; i<m; i++){
                 pCnt+=(mid/arr[i]);
             }
